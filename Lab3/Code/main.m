@@ -33,7 +33,7 @@ end
 for j = 1 : N2
      x = Y(: , j);
      disp(x);
-     xx = fft8(x);
+     xx = fft64(x);
      Y(: , j) = xx;
 end
 
@@ -64,11 +64,11 @@ end
 
 
 figure(2);
-plot(0:55,abs(Z));
-title('программная реализация БПФ');
+plot(0:N-1,abs(Z));
+title('собственная реализация БПФ');
 figure(3);
-plot(0:55, abs(fft(X)));
-title('БПФ matlab');
+plot(0:N-1, abs(fft(X)));
+title('готовая БПФ');
 
 disp('M =');
 disp(mm);
